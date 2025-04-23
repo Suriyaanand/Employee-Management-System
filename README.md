@@ -29,3 +29,20 @@ Get details of a specific employee.
 <br>
 <hr>
 <br>
+
+<h1>🛠 Tech Stack</h1>
+
+Frontend (Java Script, HTML, CSS)
+
+Backend (Spring Boot, Java, SQL)
+
+Spring Boot (REST API)
+
+Spring Data JPA
+
+MySQL (Database)
+
+<br>
+<hr>
+<br>
+
