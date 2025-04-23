@@ -55,7 +55,7 @@ This project is open-source and available for personal or educational use. Feel 
 
 <h1>✨ Author</h1>
 
-<h6>Name: </h6>Mohammed Aiman
+<h6>Name: </h6>Suriya A
 
 <h6>GitHub:</h6> Suriyaanand
 
