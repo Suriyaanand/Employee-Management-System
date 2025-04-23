@@ -1,3 +1,3 @@
 # Employee Management System
-<br>
+<hr>
 📌 Project Overview
