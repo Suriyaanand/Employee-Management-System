@@ -46,6 +46,27 @@ MySQL (Database)
 <hr>
 <br>
 
+                
+
+<h1>Front  Page </h1>
+![front page](https://github.com/user-attachments/assets/88f4ac9a-f979-4c07-9353-0b113b641293)
+
+<hr>
+
+<h1>Adding Employee's Details </h1>
+![AddDetails](https://github.com/user-attachments/assets/aa200cbb-0f64-4b3e-ae8b-9489849a1930)
+
+<h1>View Page Of Employee </h1>
+![viewPage](https://github.com/user-attachments/assets/f127ee36-c9d7-463b-882c-89421c68b663)
+
+<h1>Updating Employee's Details</h1>
+![updateDetails](https://github.com/user-attachments/assets/94be79ee-3439-47e4-9322-2d7a5a65f2e7)
+
+
+<br>
+<hr>
+<br>
+
 <h1>📝 License</h1>
 This project is open-source and available for personal or educational use. Feel free to contribute or modify it as needed.
 
