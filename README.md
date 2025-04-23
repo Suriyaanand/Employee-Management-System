@@ -11,10 +11,10 @@ The <B>Employee Management System</B> is a web application built using HTML , CS
 <h6>Add Employee</h6>
 Create new employee records.
 
-<h6>Delete Employee</h6> –
+<h6>Delete Employee</h6> 
 Remove employees by ID.
 
-<h6>Fetch All Employees</h6> –
+<h6>Fetch All Employees</h6> 
 Retrieve a list of all employees.
 
 <h6>Update Employee</h6> 
@@ -45,4 +45,20 @@ MySQL (Database)
 <br>
 <hr>
 <br>
+
+<h1>📝 License</h1>
+This project is open-source and available for personal or educational use. Feel free to contribute or modify it as needed.
+
+<br>
+<hr>
+<br>
+
+<h1>✨ Author</h1>
+
+<h6>Name: </h6>Mohammed Aiman
+
+<h6>GitHub:</h6> Suriyaanand
+
+<h3>Enjoy coding! 🚀</h3>
+
 
