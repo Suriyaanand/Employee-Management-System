@@ -8,3 +8,16 @@ The <B>Employee Management System</B> is a web application built using HTML , CS
 <br>
 
 <h1>🚀 Features</h1>
+<h6>Add Employee</h6>– Create new employee records.
+
+<h6>Delete Employee</h6> – Remove employees by ID.
+
+<h6>Fetch All Employees</h6> – Retrieve a list of all employees.
+
+<h6>Update Employee</h6> – Modify existing employee details.
+
+<h6>Delete Employee based on technology</h6> – Get details of a specific employee.
+
+<br>
+<hr>
+<br>
