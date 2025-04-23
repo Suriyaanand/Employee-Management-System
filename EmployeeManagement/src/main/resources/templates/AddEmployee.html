@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="AddEmployee.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&family=DM+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container1">
+        <h1 id="Title">Employee Entry</h1>
+        <form id="employeeForm">
+            <label id="l1">Enter Id:</label>
+            <div id="I1">
+                <input placeholder="Enter Your Id" class="input" name="id" type="text" required/>
+            </div>
+            <label id="l2">Enter Name:</label>
+            <div id="I2">
+                <input placeholder="Enter Your Name" class="input" name="name" type="text" required/>
+            </div>
+            <label id="l3">Enter Age:</label>
+            <div id="I3">
+                <input placeholder="Enter Your Age" class="input" name="age" type="number" required/>
+            </div>
+            <label id="l4">Enter Department:</label>
+            <div id="I4">
+                <input placeholder="Enter your Department" class="input" name="Department" type="text" required/>
+            </div>
+            <div id="b1">
+                <button type="submit">Submit</button>
+            </div>
+            <div id="b2">
+                <a href="./Database.html"><button type="button">View</button></a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("employeeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const empData = {
+                id: document.querySelector('[name="id"]').value,
+                name: document.querySelector('[name="name"]').value,
+                age: document.querySelector('[name="age"]').value,
+                department: document.querySelector('[name="Department"]').value
+            };
+
+            fetch("http://localhost:8128/employee/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(empData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Employee added successfully!");
+                    document.getElementById("employeeForm").reset();
+                } else {
+                    alert("Failed to add employee: " + response.status);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Something went wrong!");
+            });
+        });
+    </script>
+</body>
+</html>

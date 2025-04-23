@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="AddEmployee.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <title>Employee Details</title>
+</head>
+<body>
+    <div id="container1">
+        <h1 id="Title"> Update Details</h1>
+        <form id="employeeForm"  action="http://localhost:8128/employee/update" method="put">
+            <label id="l1">Enter Id:</label>
+            <div id="I1">
+            <input placeholder="Enter Your Id" class="input"  name="id" type="text"/>
+            </div>
+            <label id="l2">Enter Name:</label>
+            <div id="I2">
+            <input placeholder="Enter Your Name" class="input"  name="name" type="text"/>
+            </div>
+            <label id="l3">Enter Age:</label>
+            <div id="I3">
+            <input placeholder="Enter Your Age" class="input"  name="age" type="text"/>
+            </div>
+            <label id="l4">Enter Department:</label>
+            <div id="I4">
+            <input placeholder="Enter your Department" class="input"  name="Department" type="text"/>
+            </div>
+            <div id="b1">
+                <button>Submit</button>
+            </div>
+            <div id="b2">
+               <button onclick="window.location.href='./Database.html'; return false;">View</button>
+            </div>
+        </form>
+    </div>
+    <script>
+         document.getElementById("employeeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const empData = {
+                id: document.querySelector('[name="id"]').value,
+                name: document.querySelector('[name="name"]').value,
+                age: document.querySelector('[name="age"]').value,
+                department: document.querySelector('[name="Department"]').value
+            };
+
+            fetch("http://localhost:8128/employee/update", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(empData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Employee Updated successfully!");
+                } else {
+                    alert("Failed to add employee: " + response.status);
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Something went wrong!");
+            });
+        });
+    </script>
+    
+</body>

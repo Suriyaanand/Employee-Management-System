@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: auto;
+    width:50vw;
+    height: 50vh;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    animation:bg 50s  ease infinite;
+}
+
+@keyframes bg {
+    0% {
+        
+        background-image: url(./FrontPage/4.jpg);
+    }
+    25% {
+    
+        background-image: url(./FrontPage/5.jpg);
+    }
+    50% {
+      
+        background-image: url(./FrontPage/6.jpg); 
+    }
+    75% {
+        
+        background-image: url(./FrontPage/7.jpg); 
+    }
+    100% {
+      
+        background-image: url(./FrontPage/9.jpg);
+    }
+}
+#container1{
+    margin: 0;
+    padding: 0;
+    top: 60%;
+    left:50% ;
+    width:5%;
+    box-shadow: inset 2px 4px;
+    opacity: 0.65;
+    position:fixed; 
+    top:0;
+    height: 100vh; 
+    width:150vh;
+    background: linear-gradient(-45deg,#fefefc,#08144f,#42c4ff)  ;
+    transition:ease-in-out;
+    animation: gradientAnimation 50s infinite;
+    box-shadow:-4px -4px rgba(125, 122, 122, 0.354);
+}
+
+@keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(-45deg, #fbfff3,#028990,#04ce9a);
+    }
+    25% {
+      background: linear-gradient(-45deg,#fefefc,#08144f,#42c4ff);
+    }
+    50% {
+      background: linear-gradient(-45deg, #fbfff3,#028990,#04ce9a);
+    }
+    75% {
+      background: linear-gradient(-45deg,#fefefc,#08144f,#42c4ff);
+    }
+    100% {
+      background: linear-gradient(-45deg, #fbfff3,#028990,#04ce9a);
+    }
+  }
+#copyrights{
+    font-family: "Inter", sans-serif;
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    bottom:50px;
+    right: 18%;
+    color:black;
+}
+#img2{
+    bottom:51px;
+    right: 32%;
+    position:absolute ;
+    height: 15px;
+}
+#img100{
+  bottom:94px;
+    right: 10%;
+    position:absolute ;
+    height: 25%;
+
+}
+#img1{
+  bottom:5%;
+  right: 15%;
+  position:absolute ;
+  
+}
+#Register {
+    position: absolute;
+    top:25px;
+    right: 20px;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+   
+  }
+  
+  #Register:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+
+  #View{
+    position: absolute;
+    top:25px;
+    right: 42%;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+   
+  }
+  
+  #View:active {
+    border-radius: 2px solid black;
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+  }
+  #Topics{
+    font-family: "Familjen Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight:bolder;
+    font-size: xx-large;
+    margin: 0;
+    padding: 0;
+    bottom:50%;
+    right: 8%;
+    position: absolute;
+    z-index: 3;
+  }
+  #Topics1{
+    font-family: "Familjen Grotesk", sans-serif;
+    text-transform: uppercase;
+    font-weight:bolder;
+    font-size: xx-large;
+    margin: 0;
+    padding: 0;
+    bottom:50%;
+    right: 8%;
+    filter: blur(2px);
+    position: absolute;
+    color: #5f5f5f;
+    z-index:2;
+    animation:blink 10s ease-in infinite;
+  }
+  @keyframes blink{
+    0%{
+      color: whitesmoke;
+      filter: blur(3px);
+    }
+    25%{
+      color: #5f5f5f;
+      filter: blur(2px);
+    }
+    75%{
+      color: whitesmoke;
+      filter: blur(2px);
+    }
+    100%{
+      transition: ease-out;
+      color: #5f5f5f;
+      filter: blur(3px);
+    }
+  }
+
+#quote{
+    margin: 0;
+    padding: 0;
+    bottom:46%;
+    right: 8%;
+    position: absolute;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+}
+

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Employees</title>
+    <link rel="stylesheet" href="viewEmployee.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee List</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTbl">
+                <!-- Rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function showEmployee() {
+            fetch("http://localhost:8128/employee")
+                .then((resp) => resp.json())
+                .then((data) => {
+                    const tableBody = document.getElementById("employeeTbl");
+                    tableBody.innerHTML = "";
+
+                    data.forEach(emp => {
+                        const row = `<tr>
+                            <td>${emp.id}</td>
+                            <td>${emp.name}</td>
+                            <td>${emp.age}</td>
+                            <td>${emp.department}</td>
+                            <td>
+                                <button onclick="deleteEmployee(${emp.id})">Delete</button>
+                            </td>
+                        </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch((error) => console.error("Error fetching data:", error));
+        }
+
+        function deleteEmployee(id) {
+            fetch(`http://localhost:8128/employee/delete/byid/${id}`, {
+                method: 'DELETE'
+            })
+            .then(() => showEmployee())
+            .catch(err => console.error("Delete error:", err));
+        }
+
+        showEmployee(); // Initial call
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./Database.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont1"></div>
+    <a href="./AddEmployee.html"><button id="view">add</button></a>
+    <button id="clr" onclick="clearData()">Clear all</button>
+    <a href="./frontPage.html"><button id="fr">front Page</button></a>
+    <div id ="del">
+    <div class="input-group">
+        <input type="text" class="input" id="delsearch" placeholder="Find and delete" autocomplete="off">
+        <input class="button--submit" value="DELETE" type="submit" onclick="ondeletebytech(document.getElementById('delsearch').value)">
+    </div>
+</div>
+    <h1 id="t1">EMPLOYEE DATABASE</h1>
+    <div id="ctnr2">
+    <table  cellspacing="20" class="tbl">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>DEPARTMENT</th>
+                <th colspan="2">ACTIONS</th>
+            </tr>
+            </thead>
+            <tbody id="employeeTbl">      
+            </tbody>
+    </table>
+    </div>
+    <script>
+        function showEmployee() {
+            fetch("http://localhost:8128/employee")
+                .then((resp) => resp.json())
+                .then((data) => {
+                    const tableBody = document.getElementById("employeeTbl");
+                    tableBody.innerHTML = "";
+
+                    data.forEach(emp => {
+                        const row = `<tr>
+                            <td>${emp.id}</td>
+                            <td>${emp.name}</td>
+                            <td>${emp.age}</td>
+                            <td>${emp.department}</td>
+                            <td  >
+                                <a href="./updateEmployee.html"><button id="updt"> Update </button></a>
+                            </td>
+                            <td>
+                                <button onclick="deleteEmployee(${emp.id})" id="dlt">Delete</button>
+                            </td>
+                        </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                })
+                .catch((error) => console.error("Error fetching data:", error));
+        }
+      
+        
+        function deleteEmployee(id) {
+            fetch(`http://localhost:8128/employee/delete/byid/${id}`, {
+                method: 'DELETE'
+            })
+            .then(() => showEmployee())
+            .catch(err => console.error("Delete error:", err));
+        }
+          
+        function ondeletebytech(id) {
+    fetch(`http://localhost:8128/employee/delete/${id}`, {
+        method: 'DELETE'
+    })
+    .then(() => {
+        alert("Deleted successfully");
+        showEmployee(); 
+    })
+    .catch(err => {
+        alert("Can't find the tech or deletion failed.");
+        console.error(err);
+    });
+}
+     function clearData(){
+        fetch(`http://localhost:8128/employee/clear`,{
+            method:'DELETE'
+        }).then(()=>{
+            showEmployee();
+            alert("Cleared succesfully");
+        }).catch(err=>{
+             alert("clear data");
+             console.err(err)
+        })
+     }
+
+        showEmployee(); 
+    </script>
+
+</body>
+</html>
