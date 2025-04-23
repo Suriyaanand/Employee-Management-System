@@ -49,20 +49,16 @@ MySQL (Database)
                 
 
 <h1>Front  Page </h1>
-![front page](https://github.com/user-attachments/assets/88f4ac9a-f979-4c07-9353-0b113b641293)
 <img src="https://github.com/user-attachments/assets/88f4ac9a-f979-4c07-9353-0b113b641293" alt="Front Page">
 <hr>
 
 <h1>Adding Employee's Details </h1>
-![AddDetails](https://github.com/user-attachments/assets/aa200cbb-0f64-4b3e-ae8b-9489849a1930)
 <img src="https://github.com/user-attachments/assets/aa200cbb-0f64-4b3e-ae8b-9489849a1930" alt="Adding Employee's">
 
 <h1>View Page Of Employee </h1>
-![viewPage](https://github.com/user-attachments/assets/f127ee36-c9d7-463b-882c-89421c68b663)
 <img src="https://github.com/user-attachments/assets/f127ee36-c9d7-463b-882c-89421c68b663" alt="View Page">
 
 <h1>Updating Employee's Details</h1>
-![updateDetails](https://github.com/user-attachments/assets/94be79ee-3439-47e4-9322-2d7a5a65f2e7)
 <img src="https://github.com/user-attachments/assets/94be79ee-3439-47e4-9322-2d7a5a65f2e7" alt="Updating Employee's">
 
 
